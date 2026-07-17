@@ -89,11 +89,7 @@ const year = new Date().getFullYear();
       <a href="/contact/">Contact</a>
     </nav>
     <div class="header-cta">
-      <span class="hp">
-        <b>Answered day or night</b>
-        <span class="hp-num">{site.phone}</span>
-      </span>
-      <a class="nav-call" href={site.phoneHref}><svg><use href="#i-phone"/></svg> Call Now</a>
+      <a class="nav-call" href={site.phoneHref}><svg><use href="#i-phone"/></svg><span class="nc-num">{site.phone}</span><span class="nc-short">Call</span></a>
       <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')"><svg><use href="#i-menu"/></svg></button>
     </div>
   </div>
