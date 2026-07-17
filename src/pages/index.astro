@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { site, serviceNav, areaNav, counties } from "../data/site.js";
+import { site, serviceNav, areaNav, counties, IMG } from "../data/site.js";
 import { itemListNode, faqNode, breadcrumb } from "../lib/schema.js";
 
 const problems = [
@@ -81,7 +81,7 @@ const nodes = [
         </div>
       </div>
       <div class="hero-photo">
-        <div class="frame"><img src="/images/hero.jpg" alt="A hillside street of older Cincinnati brick homes above the Ohio River at dusk" width="480" height="600" loading="eager" fetchpriority="high" /></div>
+        <div class="frame"><img src={IMG.hero} alt="The Cincinnati riverfront skyline and the Ohio River bridges" width="480" height="600" loading="eager" fetchpriority="high" /></div>
         <span class="tag">SERVING GREATER CINCINNATI · OH &amp; KY</span>
         <div class="float f1"><svg><use href="#i-clock"/></svg> Answered day or night</div>
         <div class="float f2"><svg><use href="#i-shield"/></svg> Sealed to stay out</div>
@@ -189,7 +189,7 @@ const nodes = [
     <div class="svc-grid">
       {serviceNav.map((s) => (
         <article class="svc">
-          <img src={s.img} alt={svcAlt[s.slug]} width="380" height="214" loading="lazy" />
+          <img src={IMG[s.slug]} alt={svcAlt[s.slug]} width="380" height="214" loading="lazy" />
           <div class="svc-body">
             <h3><a href={`/${s.slug}/`}>{s.label}</a></h3>
             <p>{svcBlurb[s.slug]}</p>
@@ -216,7 +216,7 @@ const nodes = [
         <li><div><b>5. Confirm</b><span>A follow-up reads the evidence: activity gone, seals holding, and guidance for keeping it that way.</span></div></li>
       </ol>
       <div class="proc-art">
-        <img src="/images/rat-inspection.jpg" alt="A local technician inspecting a Cincinnati home for rat entry points" width="560" height="440" loading="lazy" />
+        <img src={IMG["rat-inspection-in-cincinnati"]} alt="A local technician inspecting a Cincinnati home for rat entry points" width="560" height="440" loading="lazy" />
       </div>
     </div>
     <div class="hero-cta" style="justify-content:center;margin-top:30px"><a class="btn-ghost" href="/how-it-works/">The full process, explained →</a></div>
